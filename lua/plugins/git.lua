@@ -1,5 +1,8 @@
 return {
   'tpope/vim-fugitive',
+  config = function()
+    vim.keymap.set('n', '<leader>g', ':Git<CR>', { desc = 'Open [g]it' })
+  end,
   -- 'voldikss/vim-floaterm',
   -- {
   --   'numToStr/FTerm.nvim',
