@@ -1,33 +1,14 @@
 return {
   'tpope/vim-fugitive',
   config = function()
-    vim.keymap.set('n', '<leader>g', ':Git<CR>', { desc = 'Open [g]it' })
+    vim.keymap.set('n', '<leader>gs', ':Git<CR>', { desc = '[g]it [s]tatus' })
+    vim.keymap.set('n', '<leader>gb', ':Git blame<CR>', { desc = '[g]it [b]lame' })
+    vim.keymap.set('n', '<leader>ga', ':Git add %<CR>', { desc = '[g]it [a]dd unstaged changes in file' })
+    vim.keymap.set('n', '<leader>gA', ':Git add .<CR>', { desc = '[g]it add [A]ll unstaged changes' })
+    vim.keymap.set('n', '<leader>gc', ':Git commit<CR>', { desc = '[g]it [c]ommit' })
+    vim.keymap.set('n', '<leader>gmc', ':Git commit --amend<CR>', { desc = '[g]it [m]erge with previous [c]ommit (amend)' })
+    vim.keymap.set('n', '<leader>gu', ':Git pull<CR>', { desc = '[g]it [u]pdate (pull)' })
+    vim.keymap.set('n', '<leader>gp', ':Git push<CR>', { desc = '[g]it [p]ush' })
+    vim.keymap.set('n', '<leader>gfp', ':Git push --force<CR>', { desc = '[g]it [f]orce [p]ush' })
   end,
-  -- 'voldikss/vim-floaterm',
-  -- {
-  --   'numToStr/FTerm.nvim',
-  --   config = function()
-  --     local lazygit = require('FTerm'):new {
-  --       cmd = 'lazygit',
-  --       dimensions = {
-  --         height = 0.9,
-  --         width = 0.9,
-  --       },
-  --     }
-  --     vim.keymap.set('n', '<leader>gg', function()
-  --       lazygit:toggle()
-  --     end)
-  --   end,
-  -- },
-  -- {
-  --   'dinhhuy258/git.nvim',
-  --   opts = {
-  --     keymaps = {
-  --       -- Open blame window
-  --       blame = '<Leader>gb',
-  --       -- Close blame window
-  --       quit_blame = '<Leader>gb',
-  --     },
-  --   },
-  -- },
 }
